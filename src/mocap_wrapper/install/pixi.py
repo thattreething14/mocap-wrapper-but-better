@@ -41,11 +41,8 @@ Log = logging.getLogger(__name__)
 is_win = sys.platform.startswith("win")
 is_mac = sys.platform.startswith("darwin")
 is_linux = sys.platform.startswith("linux")
-MIRROR_CN_PY = (
-    "https://gitee.com/aclon314/mirror-cn/raw/main/src/mirror_cn/mirror_cn.py"
-    if getdefaultlocale()[0] == "zh_CN"
-    else "https://raw.githubusercontent.com/AClon314/mirror-cn/main/src/mirror_cn/mirror_cn.py"
-)
+_SELF_DIR = os.path.dirname(_SELF)
+MIRROR_CN_FILE = os.path.join(_SELF_DIR, "mirror_cn.py")
 _HOME = os.path.expanduser("~")
 PIXI_BIN = os.getenv("PIXI_BIN", None) or os.path.join(_HOME, ".pixi", "bin")
 VENV = os.path.join(_HOME, ".venv")
